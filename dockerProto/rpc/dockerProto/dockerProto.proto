@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package github.com.goland.dockerProto;
+option go_package = "./;dockerProto";
+
+// Asus is an order routing µ service
+service DockerProto {
+  // Hello ..
+  rpc Hello(HelloReq) returns (HelloResp);
+}
+
+// HelloReq is an empty body request but represents
+message HelloReq {}
+
+// HelloResp is an empty body response but represents
+message  HelloResp {
+  string msg = 1;
+}
+
