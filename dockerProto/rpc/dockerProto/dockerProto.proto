@@ -3,16 +3,16 @@ syntax = "proto3";
 package github.com.goland.dockerProto;
 option go_package = "./;dockerProto";
 
-// Asus is an order routing µ service
+// DockerProto ...
 service DockerProto {
   // Hello ..
   rpc Hello(HelloReq) returns (HelloResp);
 }
 
-// HelloReq is an empty body request but represents
+// HelloReq ...
 message HelloReq {}
 
-// HelloResp is an empty body response but represents
+// HelloResp ...
 message  HelloResp {
   string msg = 1;
 }
