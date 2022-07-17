@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-BINARY=asus
+BINARY=dockerProto
 
 
 proto:
