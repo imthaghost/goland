@@ -1,0 +1,58 @@
+
+syntax = "proto3";
+
+package auth;
+
+option go_package = "./;passport";
+
+service Auth {
+  rpc HealthCheck(HealthRequest) returns (HealthResponse) {}
+  rpc Register(RegisterRequest) returns (RegisterResponse) {}
+  rpc Login(LoginRequest) returns (LoginResponse) {}
+  rpc Validate(ValidateRequest) returns (ValidateResponse) {}
+}
+
+// Health
+message HealthRequest {
+
+}
+
+message HealthResponse {
+  int64 status = 1;
+}
+
+// Register
+message RegisterRequest {
+  string username = 1;
+  string salt = 2;
+  string group_id = 3;
+}
+  
+// used and v
+message RegisterResponse {
+  int64 status = 1;
+  string error = 2;
+}
+
+// Login
+message LoginRequest {
+  string username = 1;
+  string public_key = 2;
+}
+
+message LoginResponse {
+  int64 status = 1;
+  string error = 2;
+  string token = 3;
+}
+
+// Validate
+message ValidateRequest {
+  string proof = 1;
+}
+
+message ValidateResponse {
+  int64 status = 1;
+  string error = 2;
+  int64 userId = 3;
+}

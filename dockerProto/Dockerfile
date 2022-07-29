@@ -4,7 +4,7 @@ FROM golang:1.18
 ENV APP_NAME dockerProto
 
 # Working directory
-WORKDIR /go/src/${APP_NAME}
+WORKDIR tmp
 
 RUN apt-get update
 RUN apt install -y protobuf-compiler
@@ -20,4 +20,4 @@ RUN protoc -I ./rpc \
        --python_out=./rpc/ \
        ./rpc/dockerProto/dockerProto.proto
 
-
+RUN ls /tmp

@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-BINARY=dockerProto
+BINARY=dockerproto
 
 
 proto:
