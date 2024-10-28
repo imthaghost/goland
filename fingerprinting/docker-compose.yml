@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  # Backend service
+  fingerprint:
+    build: ./fingerprint
+    depends_on:
+      - redis
+    networks:
+      - fingerprint-network
+
+
+
+  # Redis service
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - backend-network
+
+# Network for the services
+networks:
+  fingerprint-network:
+    driver: bridge
