@@ -46,7 +46,7 @@ func getGeneralConfig() GeneralConfig {
 	}
 
 	if config.AppEnv == PROD {
-		config.BaseURL = "https://api.contrihub.lol"
+		config.BaseURL = ""
 	}
 
 	return config
